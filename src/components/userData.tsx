@@ -7,7 +7,7 @@ import { useState, useEffect } from 'react';
  * 
  * export fetchData
  */
-const url = 'https://dummyjson.com/users';
+const apiUrl = 'https://dummyjson.com/users';
 
 interface User {
     id:number,
@@ -25,7 +25,7 @@ export default function users() {
     useEffect(() => {
         const fetchUsers = async () => {
             setIsLoading(true);
-            const response = await fetch(`${url}`);
+            const response = await fetch(`${apiUrl}`);
             const users = await response.json() as { users: User[] };
             setUsers(users.users);
             setIsLoading(false);
@@ -33,8 +33,19 @@ export default function users() {
 
         fetchUsers();
     }, []);
-
+    
     if (isLoading) {
         return <div>Loading...</div>
     }
+
+    return (
+        <div className="list">
+            <h1 className="title">Users List</h1>
+            <ul>
+                {users.map((user) => {
+                    return <li key={user.id}>{user.firstName} {user.lastName}, {user.age}, {user.height}cm, {user.hair.color}</li>
+                })}
+            </ul>
+        </div>
+    )
 }
