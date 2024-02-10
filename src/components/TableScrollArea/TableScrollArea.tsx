@@ -6,9 +6,11 @@ import UserData from '../userData';
 
 const data = [
   {
-    name: 'Athena Weissnat',
-    company: 'Little - Rippin',
-    email: 'Elouise.Prohaska@yahoo.com',
+    firstName: 'Athena Weissnat',
+    lastName: 'Little - Rippin',
+    age: '34',
+    height: '158cm',
+    haircolour: 'black',
   }
 ];
 
@@ -16,10 +18,11 @@ export function TableScrollArea() {
   const [scrolled, setScrolled] = useState(false);
 
   const rows = data.map((row) => (
-    <Table.Tr key={row.name}>
-      <Table.Td>{row.name}</Table.Td>
-      <Table.Td>{row.email}</Table.Td>
-      <Table.Td>{row.company}</Table.Td>
+    <Table.Tr key={row.firstName}>
+      <Table.Td>{row.lastName}</Table.Td>
+      <Table.Td>{row.age}</Table.Td>
+      <Table.Td>{row.height}</Table.Td>
+      <Table.Td>{row.haircolour}</Table.Td>
     </Table.Tr>
   ));
 
@@ -28,9 +31,11 @@ export function TableScrollArea() {
       <Table miw={700}>
         <Table.Thead className={cx(classes.header, { [classes.scrolled]: scrolled })}>
           <Table.Tr>
-            <Table.Th>Name</Table.Th>
-            <Table.Th>Email</Table.Th>
-            <Table.Th>Company</Table.Th>
+            <Table.Th>First Name</Table.Th>
+            <Table.Th>Last Name</Table.Th>
+            <Table.Th>Age</Table.Th>
+            <Table.Th>Height</Table.Th>
+            <Table.Th>Hair Colour</Table.Th>
           </Table.Tr>
         </Table.Thead>
         <Table.Tbody>{rows}</Table.Tbody>
