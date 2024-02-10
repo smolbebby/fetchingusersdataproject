@@ -9,3 +9,15 @@
  * 
  * export avgAge to use in app and grid(?)
  */
+
+import userData from './userData';
+
+function averageAge() {
+    const age: any = userData;
+
+    const average = age.reduce((a, {age}) => a + age, 0) / age.length;
+
+    console.log(averageAge);
+}
+
+export default averageAge;
