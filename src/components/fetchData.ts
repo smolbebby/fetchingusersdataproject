@@ -11,11 +11,15 @@ const apiUrl = 'https://dummyjson.com/users';
 
 interface User {
     id:number,
-    firstName:string,
-    lastName:string,
+    name: {
+        firstName: string,
+        lastName: string,
+    }
     age:number,
     height:number,
-    haircolor:string
+    hair: {
+        color: string
+    }
 }
 
 

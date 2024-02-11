@@ -9,7 +9,9 @@ type Props = {
       lastName: string,
       age: number,
       height: number,
-      haircolor: string,
+      hair: {
+        color: string
+      },
   }[];
 }
 
@@ -22,7 +24,7 @@ export function TableScrollArea({ data }: Props) {
       <Table.Td>{row.lastName}</Table.Td>
       <Table.Td>{row.age}</Table.Td>
       <Table.Td>{row.height}cm</Table.Td>
-      <Table.Td>{row.haircolor}</Table.Td>
+      <Table.Td>{row.hair.color}</Table.Td>
     </Table.Tr>
   ));
 
