@@ -1,5 +1,3 @@
-import useUsers from './fetchData';
-import { useState, useEffect } from 'react';
 /**
  * import fetchData
  * 
@@ -11,8 +9,15 @@ import { useState, useEffect } from 'react';
  * export avgAge to use in app and grid(?)
  */
 
+/**
+ * averageAge component calculates and returns the average age of all users from fetchData.ts
+ * @returns {{ averageAge: number}} Object containing the calculated average.
+ */
+import useUsers from './fetchData';
+import { useState, useEffect } from 'react';
+
 export default function averageAge() {
-    const { users, isLoading } = useUsers();
+    const { users } = useUsers();
     const [averageAge, setAverageAge] = useState(0);
 
     useEffect(() => {

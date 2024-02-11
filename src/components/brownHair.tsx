@@ -12,7 +12,7 @@ import useUsers from './fetchData';
  */
 
 export default function brownHair() {
-    const { users, isLoading } = useUsers();
+    const { users } = useUsers();
     const [brownHair, setBrownHair] = useState(0);
 
     useEffect(() => {

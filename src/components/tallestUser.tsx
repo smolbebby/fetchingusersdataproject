@@ -12,7 +12,7 @@ import useUsers from './fetchData';
  */
 
 export default function tallestHeight() {
-    const { users, isLoading } = useUsers();
+    const { users } = useUsers();
     const [tallestHeight, setTallestHeight] = useState(0);
 
     useEffect(() => {

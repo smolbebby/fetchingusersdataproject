@@ -1,3 +1,8 @@
+/**
+ * @fileoverview TableScrollArea component renders scrollable table with a stickey header.
+ * based on Mantine's table template with the same file name.
+ */
+
 import cx from 'clsx';
 import { useState } from 'react';
 import { Table, ScrollArea } from '@mantine/core';
