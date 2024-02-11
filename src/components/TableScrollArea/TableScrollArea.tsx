@@ -2,19 +2,18 @@ import cx from 'clsx';
 import { useState } from 'react';
 import { Table, ScrollArea } from '@mantine/core';
 import classes from './TableScrollArea.module.css';
-import FetchData from '../fetchData';
 
-const data = [
-  {
-    firstName: 'Athena Weissnat',
-    lastName: 'Little - Rippin',
-    age: '34',
-    height: '158cm',
-    haircolour: 'black',
-  }
-];
+type Props = {
+  data: {
+      firstName: string,
+      lastName: string,
+      age: number,
+      height: number,
+      haircolor: string,
+  }[];
+}
 
-export function TableScrollArea() {
+export function TableScrollArea({ data }: Props) {
   const [scrolled, setScrolled] = useState(false);
 
   const rows = data.map((row) => (
@@ -22,7 +21,7 @@ export function TableScrollArea() {
       <Table.Td>{row.lastName}</Table.Td>
       <Table.Td>{row.age}</Table.Td>
       <Table.Td>{row.height}</Table.Td>
-      <Table.Td>{row.haircolour}</Table.Td>
+      <Table.Td>{row.haircolor}</Table.Td>
     </Table.Tr>
   ));
 
