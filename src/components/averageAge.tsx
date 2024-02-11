@@ -1,16 +1,6 @@
-/**
- * import fetchData
- * 
- * declare function for average age
- * use reduce to calculate avg
- * return value
- * use console.log to confirm values
- * 
- * export avgAge to use in app and grid(?)
- */
 
 /**
- * averageAge component calculates and returns the average age of all users from fetchData.ts
+ * averageAge component calculates and returns the average age of all users from fetchData.ts.
  * @returns {{ averageAge: number}} Object containing the calculated average.
  */
 import useUsers from './fetchData';

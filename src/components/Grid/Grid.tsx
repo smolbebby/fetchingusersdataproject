@@ -1,3 +1,9 @@
+/**
+ * Grid is a Mantine template to create grids into the webpage. This is not currently implemented into the final product
+ * however, future development plans on integrating this into the end-product to allow for
+ * aggregated data to be on the right-hand side of the user table.
+ */
+
 import { Container, Grid, SimpleGrid, Skeleton, rem } from '@mantine/core';
 
 const PRIMARY_COL_HEIGHT = rem(300);

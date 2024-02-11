@@ -1,15 +1,10 @@
+/**
+ * brownHair component calculates and returns amount of users with brown hair using .filter, .map, and .reduce array iterators. 
+ * @returns {{ brownHair: number }} Object containing final value.
+ */
+
 import { useState, useEffect } from 'react';
 import useUsers from './fetchData';
-/**
- * import fetchData
- * 
- * declare function brownHair
- * use filter to search userbase
- * return value
- * use console.log to confirm values
- * 
- * export brownHair
- */
 
 export default function brownHair() {
     const { users } = useUsers();

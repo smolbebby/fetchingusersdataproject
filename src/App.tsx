@@ -1,3 +1,13 @@
+/**
+ * App component is the rendering for interface.
+ * Imports all* components to correctly implement into site.
+ * 
+ * @returns {JSX.Element} App UI with relevant data displayed.
+ * 
+ * *completed components. 
+ * 
+ */
+
 import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core';
 import { theme } from './theme';

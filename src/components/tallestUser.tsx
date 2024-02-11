@@ -1,15 +1,12 @@
+/**
+ * tallestUser component calculates tallest user by using .filter and .map array iterators.
+ * to determine tallest height.
+ * 
+ * @returns {{ tallestHeight }} Obtain containing calculated value.
+ */
+
 import { useState, useEffect } from 'react';
 import useUsers from './fetchData';
-/**
- * import fetchData
- * 
- * declare function tallestUser
- * use filter to search userbase
- * return value
- * use console.log to confirm values
- * 
- * export tallestUser
- */
 
 export default function tallestHeight() {
     const { users } = useUsers();

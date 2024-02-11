@@ -1,12 +1,12 @@
-import { useState, useEffect } from 'react';
 /**
- * declare fetch function
+ * fetchData function fetches data from the dummyjson user database to then use in later components such as averageAge, brownHair,
+ * tallest user, TableScrollArea, and App. Uses async/await, with useEffect and useState.
  * 
- * use async function to fetch data
- * confirm with a console.log to track data
- * 
- * export fetchData
+ * @returns {{ user, isLoading }} allows for the use of user and isLoading into components.
  */
+
+import { useState, useEffect } from 'react';
+
 const apiUrl = 'https://dummyjson.com/users';
 
 interface User {
