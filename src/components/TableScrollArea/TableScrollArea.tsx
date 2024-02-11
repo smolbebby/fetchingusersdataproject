@@ -2,7 +2,7 @@ import cx from 'clsx';
 import { useState } from 'react';
 import { Table, ScrollArea } from '@mantine/core';
 import classes from './TableScrollArea.module.css';
-import UserData from '../userData';
+import FetchData from '../fetchData';
 
 const data = [
   {

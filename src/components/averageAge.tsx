@@ -10,14 +10,14 @@
  * export avgAge to use in app and grid(?)
  */
 
-import userData from './userData';
+import fetchUsers from './fetchData';
 
-function averageAge() {
-    const age: any = userData;
-
-    const average = age.reduce((a, {age}) => a + age, 0) / age.length;
-
-    console.log(averageAge);
+async function calculateAverageAge(): Promise<number> {
+    const users = await fetchUsers();
+    const totalAge = users.reduce((sum, user) => sum + user.age, 0);
+    return totalAge / users.length;
 }
+console.log(calculateAverageAge);
 
-export default averageAge;
+export default calculateAverageAge;
+
