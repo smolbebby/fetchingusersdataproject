@@ -1,4 +1,5 @@
-
+import useUsers from './fetchData';
+import { useState, useEffect } from 'react';
 /**
  * import fetchData
  * 
@@ -10,14 +11,19 @@
  * export avgAge to use in app and grid(?)
  */
 
-import useUsers from './fetchData';
+export default function averageAge() {
+    const { users, isLoading } = useUsers();
+    const [averageAge, setAverageAge] = useState(0);
 
-async function calculateAverageAge(): Promise<number> {
-    const users = await useUsers();
-    const totalAge = users.reduce((sum, user) => sum + user.age, 0);
-    return totalAge / users.length;
-}
-console.log(calculateAverageAge);
+    useEffect(() => {
+        if (users.length > 0) {
+            const totalAge = users.reduce((sum, user) => sum + user.age, 0);
+            setAverageAge(Math.floor(totalAge / users.length));
+        };
 
-export default calculateAverageAge;
+        averageAge;
+
+    }, [users]);
+    return { averageAge };
+};
 

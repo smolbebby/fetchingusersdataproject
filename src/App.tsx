@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react';
 
 export default function App() {
   const { users, isLoading } = useUsers();
+  const { averageAge } = AverageAge();
 
   return (
     <MantineProvider theme={theme}>
@@ -17,6 +18,7 @@ export default function App() {
          <p>Loading users...</p> 
         ) : (
         < TableScrollArea data={users}/>)}
+        <p>Average Age: {averageAge}</p>
       </div>
     </MantineProvider>
   );
