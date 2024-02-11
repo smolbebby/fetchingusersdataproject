@@ -4,7 +4,6 @@ import { theme } from './theme';
 import useUsers from './components/fetchData';
 import AverageAge from './components/averageAge';
 import { TableScrollArea } from './components/TableScrollArea/TableScrollArea';
-import React, { useState, useEffect } from 'react';
 import TallestUser from './components/tallestUser';
 import BrownHair from './components/brownHair';
 
