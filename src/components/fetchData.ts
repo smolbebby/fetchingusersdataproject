@@ -34,5 +34,5 @@ export default function fetchUsers() {
 
         fetchUsers();
     }, []);
-
+        return (fetchUsers);
     }
