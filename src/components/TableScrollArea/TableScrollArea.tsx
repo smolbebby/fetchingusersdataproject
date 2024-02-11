@@ -18,9 +18,10 @@ export function TableScrollArea({ data }: Props) {
 
   const rows = data.map((row) => (
     <Table.Tr key={row.firstName}>
+      <Table.Td>{row.firstName}</Table.Td>
       <Table.Td>{row.lastName}</Table.Td>
       <Table.Td>{row.age}</Table.Td>
-      <Table.Td>{row.height}</Table.Td>
+      <Table.Td>{row.height}cm</Table.Td>
       <Table.Td>{row.haircolor}</Table.Td>
     </Table.Tr>
   ));
