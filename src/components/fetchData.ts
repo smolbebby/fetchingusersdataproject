@@ -15,24 +15,27 @@ interface User {
     lastName:string,
     age:number,
     height:number,
-    hair:string
+    haircolor:string
 }
 
 
-export default function fetchUsers() {
+export default function useUsers() {
     const [isLoading, setIsLoading] = useState(false);
     const [users, setUsers] = useState<User[]>([]);
 
     useEffect(() => {
         const fetchUsers = async () => {
             setIsLoading(true);
-            const response = await fetch(`${apiUrl}`);
-            const users = await response.json() as { users: User[] };
-            setUsers(users.users);
-            setIsLoading(false);
+            try {
+                const response = await fetch(apiUrl);
+                const usersData = await response.json() as { users: User[] };
+                setUsers(usersData.users);
+            } finally {
+                setIsLoading(false);
+            }
         };
 
         fetchUsers();
     }, []);
-        return (fetchUsers);
+        return { users, isLoading };
     }
