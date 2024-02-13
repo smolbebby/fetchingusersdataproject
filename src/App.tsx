@@ -11,7 +11,7 @@
 import '@mantine/core/styles.css';
 import { MantineProvider } from '@mantine/core';
 import { theme } from './theme';
-import useUsers from './components/fetchData';
+import useUsers from './components/useUsers';
 import AverageAge from './components/averageAge';
 import { TableScrollArea } from './components/TableScrollArea/TableScrollArea';
 import TallestUser from './components/tallestUser';
@@ -19,9 +19,9 @@ import BrownHair from './components/brownHair';
 
 export default function App() {
   const { users, isLoading } = useUsers();
-  const { averageAge } = AverageAge();
-  const { tallestHeight } = TallestUser();
-  const { brownHair } = BrownHair();
+  const age = AverageAge(users);
+  const height = TallestUser(users);
+  const hair = BrownHair(users);
 
   return (
     <MantineProvider theme={theme}>
@@ -31,9 +31,9 @@ export default function App() {
          <p>Loading users...</p> 
         ) : (
         < TableScrollArea data={users}/>)}
-        <p>Average Age: {averageAge}</p>
-        <p>Tallest User: {tallestHeight}cm </p>
-        <p>Users with Brown Hair: {brownHair}</p>
+        <p>Average Age: {age}</p>
+        <p>Tallest User: {height}cm </p>
+        <p>Users with Brown Hair: {hair}</p>
       </div>
     </MantineProvider>
   );

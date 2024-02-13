@@ -1,24 +1,13 @@
 
 /**
  * averageAge component calculates and returns the average age of all users from fetchData.ts.
- * @returns {{ averageAge: number}} Object containing the calculated average.
+ * @returns {{ averageAge }} Object containing the calculated average.
  */
-import useUsers from './fetchData';
-import { useState, useEffect } from 'react';
+import User from './useUsers';
 
-export default function averageAge() {
-    const { users } = useUsers();
-    const [averageAge, setAverageAge] = useState(0);
 
-    useEffect(() => {
-        if (users.length > 0) {
-            const totalAge = users.reduce((sum, user) => sum + user.age, 0);
-            setAverageAge(Math.floor(totalAge / users.length));
-        };
-
-        averageAge;
-
-    }, [users]);
-    return { averageAge };
+export default function averageAge(users: User[]) {
+    const totalAge = users.reduce((sum, user) => sum + user.age, 0);
+    return Math.floor(totalAge / users.length);
 };
 
