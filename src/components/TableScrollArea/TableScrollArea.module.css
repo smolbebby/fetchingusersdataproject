@@ -1,20 +1,20 @@
 .header {
-    position: sticky;
-    top: 0;
-    background-color: var(--mantine-color-bodywhite);
-    transition: box-shadow 150ms ease;
-  
-    &::after {
-      content: '';
-      position: center;
-      left: 100;
-      right: 100;
-      bottom: 0;
-      border-bottom: rem(1px) solid
-        light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-3));
-    }
+  position: sticky;
+  top: 0;
+  background-color: var(--mantine-color-bodywhite);
+  transition: box-shadow 150ms ease;
+
+  &::after {
+    content: "";
+    position: center;
+    left: 100;
+    right: 100;
+    bottom: 0;
+    border-bottom: rem(1px) solid
+      light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-3));
   }
-  
-  .scrolled {
-    box-shadow: var(--mantine-shadow-sm);
-  }
+}
+
+.scrolled {
+  box-shadow: var(--mantine-shadow-sm);
+}

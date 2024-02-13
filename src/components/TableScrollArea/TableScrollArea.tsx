@@ -3,22 +3,22 @@
  * based on Mantine's table template with the same file name.
  */
 
-import cx from 'clsx';
-import { useState } from 'react';
-import { Table, ScrollArea } from '@mantine/core';
-import classes from './TableScrollArea.module.css';
+import cx from "clsx";
+import { useState } from "react";
+import { Table, ScrollArea } from "@mantine/core";
+import classes from "./TableScrollArea.module.css";
 
 type Props = {
   data: {
-      firstName: string,
-      lastName: string,
-      age: number,
-      height: number,
-      hair: {
-        color: string
-      },
+    firstName: string;
+    lastName: string;
+    age: number;
+    height: number;
+    hair: {
+      color: string;
+    };
   }[];
-}
+};
 
 export function TableScrollArea({ data }: Props) {
   const [scrolled, setScrolled] = useState(false);
@@ -34,9 +34,14 @@ export function TableScrollArea({ data }: Props) {
   ));
 
   return (
-    <ScrollArea h={300} onScrollPositionChange={({ y }) => setScrolled(y !== 0)}>
+    <ScrollArea
+      h={300}
+      onScrollPositionChange={({ y }) => setScrolled(y !== 0)}
+    >
       <Table miw={700}>
-        <Table.Thead className={cx(classes.header, { [classes.scrolled]: scrolled })}>
+        <Table.Thead
+          className={cx(classes.header, { [classes.scrolled]: scrolled })}
+        >
           <Table.Tr>
             <Table.Th>First Name</Table.Th>
             <Table.Th>Last Name</Table.Th>
